@@ -1,21 +1,31 @@
 class Calculator {
 	constructor(total) {
-		this.total = 0;
+		this.total = total || 0;
 	}
 	add(num) {
-		return num + this.total;
+		this.total += num;
+		return this.total;
 	}
 	subtract(num) {
-		return num - this.total;
+		this.total -= num;
+		return this.total;
 	}
 	divide(num) {
-		return num / this.total;
+		this.total /= num;
+		return this.total;
 	}
 	multiply(num) {
-		return num * this.total;
+		this.total *= num;
+		return this.total;
 	}
 }
 
+let calculator = new Calculator();
+console.log(calculator.add(50));      // => 50
+console.log(calculator.subtract(35)); // => 15
+console.log(calculator.multiply(10)); // => 150
+console.log(calculator.divide(5));    // => 30
+console.log(calculator.total)
 
 /*****************************************************************************/
 /***************** DO NOT MODIFY ANYTHING UNDER THIS LINE ********************/
